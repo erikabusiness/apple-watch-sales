@@ -1,4 +1,5 @@
 const imagemVisualizacao = document.getElementById('imagem-visualizacao')
+const tituloProduto = document.getElementById('titulo-produto')
 
 const verdeCipreste = {
     nome: 'Verde-cipreste',
@@ -22,8 +23,10 @@ const rosaClaro = {
 }
 
 const opcoesCores = [verdeCipreste, azulInverno, meiaNoite, estelar, rosaClaro]
+const opcoesTamanho = ['41 mm', '45 mm' ]
 
-let imagemSelecionada = 1;
+let imagemSelecionada = 1
+let tamanhoSelecionado = 1
 
 function trocarImagem() {
     const idOpcaoSelecionada = document.querySelector('[name = "opcao-imagem"]:checked').id /* buscando elemento com a propriedade name e que também está com a propriedade checked */
@@ -31,6 +34,21 @@ function trocarImagem() {
     imagemSelecionada = idOpcaoSelecionada.charAt(0) /* pegando o primerio caractere do id, exemplo: 'id="1-cor'. charAt(0) é igual a '1'*/
 
     imagemVisualizacao.src = './assets/opcoes-cores/imagens-azul-inverno/imagem-' + imagemSelecionada + '.jpeg' /* pega o numero recebido na imagemSelecionada e concatena na link pegando a imagem correspondente*/
-
-
 }
+
+function trocarTamanho() {
+    // mudar o tamanho da caixa
+    const idOpcaoSelecionada = document.querySelector('[name = "opcao-tamanho"]:checked').id
+    tamanhoSelecionado = idOpcaoSelecionada.charAt(0)
+    
+    //mudar o texto de acordo com o tamanho que a pessoa escolher
+    tituloProduto.innerText = 'Pulseira loop esportiva azul-inverno para caixa de '+ opcoesTamanho[tamanhoSelecionado]
+
+    //mudar tamanho
+    if (opcoesTamanho[tamanhoSelecionado] === '41 mm') {
+        imagemVisualizacao.classList.add('caixa-pequena')
+    } else {
+        imagemVisualizacao.classList.remove('caixa-pequena')
+    }
+}
+
