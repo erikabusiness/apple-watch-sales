@@ -27,6 +27,7 @@ const opcoesTamanho = ['41 mm', '45 mm' ]
 
 let imagemSelecionada = 1
 let tamanhoSelecionado = 1
+let corSelecionada = 1
 
 function trocarImagem() {
     const idOpcaoSelecionada = document.querySelector('[name = "opcao-imagem"]:checked').id /* buscando elemento com a propriedade name e que também está com a propriedade checked */
@@ -52,3 +53,8 @@ function trocarTamanho() {
     }
 }
 
+function trocarCor() {
+    const idOpcaoSelecionada = document.querySelector('[name = "opcao-cor"]:checked').id
+    corSelecionada = idOpcaoSelecionada.charAt(0)
+    tituloProduto.innerText = 'Pulseira loop esportiva '+ opcoesCores[corSelecionada].nome + ' para caixa de '+ opcoesTamanho[tamanhoSelecionado]
+}
