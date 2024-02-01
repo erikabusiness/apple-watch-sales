@@ -1,5 +1,6 @@
 const imagemVisualizacao = document.getElementById('imagem-visualizacao')
 const tituloProduto = document.getElementById('titulo-produto')
+const nomeCor = document.getElementById('nome-cor-selecionada')
 
 const verdeCipreste = {
     nome: 'Verde-cipreste',
@@ -43,7 +44,7 @@ function trocarTamanho() {
     tamanhoSelecionado = idOpcaoSelecionada.charAt(0)
     
     //mudar o texto de acordo com o tamanho que a pessoa escolher
-    tituloProduto.innerText = 'Pulseira loop esportiva azul-inverno para caixa de '+ opcoesTamanho[tamanhoSelecionado]
+    tituloProduto.innerText = 'Pulseira loop esportiva '+ opcoesCores[corSelecionada].nome + ' para caixa de '+ opcoesTamanho[tamanhoSelecionado]
 
     //mudar tamanho
     if (opcoesTamanho[tamanhoSelecionado] === '41 mm') {
@@ -57,4 +58,6 @@ function trocarCor() {
     const idOpcaoSelecionada = document.querySelector('[name = "opcao-cor"]:checked').id
     corSelecionada = idOpcaoSelecionada.charAt(0)
     tituloProduto.innerText = 'Pulseira loop esportiva '+ opcoesCores[corSelecionada].nome + ' para caixa de '+ opcoesTamanho[tamanhoSelecionado]
+    nomeCor.innerText = 'Cor - ' + opcoesCores[corSelecionada].nome
+
 }
