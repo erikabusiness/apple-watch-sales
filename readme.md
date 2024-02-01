@@ -1,6 +1,6 @@
 # Apple Watch Loop Sport Band Sales Page
 
-
+![](https://github.com/erikabusiness/apple-watch-sales/blob/main/assets/apple-watch.gif)
 
 Este repositório contém uma página de vendas inspirada na Pulseira Loop Esportiva do Apple Watch, implementada com tecnologia JavaScript para permitir a troca dinâmica de imagens, incluindo opções para mudar cores e tamanho.
 
