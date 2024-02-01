@@ -1,6 +1,10 @@
 const imagemVisualizacao = document.getElementById('imagem-visualizacao')
 const tituloProduto = document.getElementById('titulo-produto')
 const nomeCor = document.getElementById('nome-cor-selecionada')
+const miniaturaImagem0 = document.getElementById('0-imagem-miniatura')
+const miniaturaImagem1 = document.getElementById('1-imagem-miniatura')
+const miniaturaImagem2 = document.getElementById('2-imagem-miniatura')
+
 
 const verdeCipreste = {
     nome: 'Verde-cipreste',
@@ -36,6 +40,8 @@ function trocarImagem() {
     imagemSelecionada = idOpcaoSelecionada.charAt(0) /* pegando o primerio caractere do id, exemplo: 'id="1-cor'. charAt(0) é igual a '1'*/
 
     imagemVisualizacao.src = './assets/opcoes-cores/imagens-azul-inverno/imagem-' + imagemSelecionada + '.jpeg' /* pega o numero recebido na imagemSelecionada e concatena na link pegando a imagem correspondente*/
+
+    imagemVisualizacao.src = './assets/opcoes-cores' +  '/' + opcoesCores[corSelecionada].pasta + '/imagem-'+  imagemSelecionada + '.jpeg'
 }
 
 function trocarTamanho() {
@@ -59,5 +65,9 @@ function trocarCor() {
     corSelecionada = idOpcaoSelecionada.charAt(0)
     tituloProduto.innerText = 'Pulseira loop esportiva '+ opcoesCores[corSelecionada].nome + ' para caixa de '+ opcoesTamanho[tamanhoSelecionado]
     nomeCor.innerText = 'Cor - ' + opcoesCores[corSelecionada].nome
+    miniaturaImagem0.src = './assets/opcoes-cores/' + opcoesCores[corSelecionada].pasta + '/imagem-0.jpeg'
+    miniaturaImagem1.src = './assets/opcoes-cores/' + opcoesCores[corSelecionada].pasta + '/imagem-1.jpeg'
+    miniaturaImagem2.src = './assets/opcoes-cores/' + opcoesCores[corSelecionada].pasta + '/imagem-2.jpeg'
+    imagemVisualizacao.src = './assets/opcoes-cores' +  '/' + opcoesCores[corSelecionada].pasta + '/imagem-'+  imagemSelecionada + '.jpeg'
 
 }
